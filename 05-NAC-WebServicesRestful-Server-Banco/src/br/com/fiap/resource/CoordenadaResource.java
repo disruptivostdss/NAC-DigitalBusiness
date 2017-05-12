@@ -29,7 +29,7 @@ public class CoordenadaResource {
 	
 	@GET
 	@Path("/{id}")
-	@Produces(MediaType.APPLICATION_JSON) //Retorna JSON
+	@Produces(MediaType.APPLICATION_JSON) 
 	public Coordenada buscar(@PathParam("id") int codigo){
 		return bo.buscar(codigo);
 	}
@@ -40,10 +40,10 @@ public class CoordenadaResource {
 		return bo.listar();
 	}
 	
-	//POST /rest/coordenada
+	
 	
 	@POST
-	@Consumes(MediaType.APPLICATION_JSON) //Recebe JSON
+	@Consumes(MediaType.APPLICATION_JSON)
 	public Response cadastrar(Coordenada coordenada, 
 								@Context UriInfo uriInfo){
 		try {
@@ -52,8 +52,7 @@ public class CoordenadaResource {
 			e.printStackTrace();
 			throw new WebApplicationException();
 		}
-		//Construir a URL para acessar a coordenada cadastrada
-		//localhost:8080/Projeto/rest/coordenada/codigo
+		
 		UriBuilder uri = UriBuilder.fromPath(uriInfo.getPath());
 		uri.path(String.valueOf(coordenada.getCodigo()));
 		
@@ -61,7 +60,7 @@ public class CoordenadaResource {
 	}
 	
 	
-	//PUT /rest/coordenada/1
+	
 	@PUT
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -74,11 +73,11 @@ public class CoordenadaResource {
 			e.printStackTrace();
 			throw new WebApplicationException();
 		}
-		return Response.ok().build(); //HTTP STATUS 200 OK
+		return Response.ok().build(); 
 	}
 	
 
-	//DELETE /rest/coordenada/1
+	
 	@DELETE
 	@Path("/{id}")
 	public void remover(@PathParam("id") int codigo){
