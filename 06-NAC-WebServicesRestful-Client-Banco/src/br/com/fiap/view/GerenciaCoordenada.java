@@ -49,11 +49,14 @@ public class GerenciaCoordenada {
 				if(resp == 2){
 					try {
 						List<CoordenadaTO> lista = rep.listar();
+						System.out.println("\n**********************************\n");
 						for (CoordenadaTO c : lista) {
+							
 							System.out.println("Nome do Local: " + c.getNomeLocal() +
-												"Descrição: " + c.getDescricao() +
-												"Latitude: " + c.getLatitude() + "°" +
-												"Longitude: " + c.getLongitude() + "°");
+												"\nDescrição: " + c.getDescricao() +
+												"\nLatitude: " + c.getLatitude() + "°" +
+												"\nLongitude: " + c.getLongitude() + "°");
+							System.out.println("\n**********************************\n");
 							
 						}
 					} catch (WebServiceException e) {

@@ -14,7 +14,8 @@ import br.com.fiap.to.CoordenadaTO;
 
 public class CoordenadaRepository {
 	
-	private static final String URL = "http://localhost:8081/NAC-WebServicesRestful-Server-Banco/rest/coordenada/";
+	//Atenção à porta do localhost ************************************
+	private static final String URL = "http://localhost:8081/05-NAC-WebServicesRestful-Server-Banco/rest/coordenada/";
 	
 	private Client client = Client.create();
 	
