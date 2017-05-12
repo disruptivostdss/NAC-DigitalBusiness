@@ -1,18 +1,3 @@
-# Created by https://www.gitignore.io/api/eclipse
-
-### Eclipse ###
-
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.loadpath
-.recommenders
-.class
-RemoteSystemsTempFiles/
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status 
+/.apt_generated/
+/build/
+/target/
