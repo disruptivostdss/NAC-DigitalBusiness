@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="main_content">
+
+		<div class="page-header">
+			<h3 class="text-center">Busca de Coordenadas</h3>
+		</div>
+
+		<div class="container">
+			<h:form>
+				<div class="form-group col-lg-6">
+					<h:outputLabel value="Código " for="codigo" />
+					<h:inputText value="#{coordenadaBean.coordenada.codigo}"
+						styleClass="form-control" />
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<h:commandButton
+							action="#{coordenadaBean.buscar(coordenadaBean.coordenada.codigo)}"
+							value="Buscar" styleClass="btn btn-default" />
+					</div>
+				</div>
+			</h:form>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Código</th>
+						<th>Nome Local</th>
+						<th>Descrição</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>#{coordenadaBean.coordenada.codigo}</td>
+						<td>#{coordenadaBean.coordenada.nomeLocal}</td>
+						<td>#{coordenadaBean.coordenada.descricao}</td>
+						<td>#{coordenadaBean.coordenada.latitude}</td>
+						<td>#{coordenadaBean.coordenada.longitude}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

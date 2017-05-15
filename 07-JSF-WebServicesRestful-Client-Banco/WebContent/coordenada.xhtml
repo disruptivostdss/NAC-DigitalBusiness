@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<body>
+
+	<ui:composition template="_template.xhtml">
+		<ui:define name="main_content">
+
+
+			<div class="page-header">
+				<h3 class="text-center">Cadastro Coordenadas</h3>
+			</div>
+
+			<div class="container ">
+				<h:form>
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="form-group col-lg-6">
+							<h:outputLabel value="Nome do Local" for="nomeLocal" />
+							<h:inputText value="#{coordenadaBean.coordenada.nomeLocal}"
+								id="nomeLocal" styleClass="form-control" required="true" />
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="form-group col-lg-6">
+							<h:outputLabel value="Descrição" for="descricao" />
+							<h:inputText value="#{coordenadaBean.coordenada.descricao}"
+								id="descricao" styleClass="col-md-6 form-control"
+								required="true" />
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="form-group col-lg-6">
+							<h:outputLabel value="Latitude" for="latitude" />
+							<h:inputText value="#{coordenadaBean.coordenada.latitude}"
+								styleClass="form-control" required="true" />
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="form-group col-lg-6">
+							<h:outputLabel value="Longitude" for="longitude" />
+							<h:inputText value="#{coordenadaBean.coordenada.longitude}"
+								styleClass="form-control" required="true" />
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-10">
+
+						<div class="form-group">
+							<h:commandButton action="#{coordenadaBean.cadastrar()}"
+								value="Registrar" styleClass="btn btn-success" />
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
